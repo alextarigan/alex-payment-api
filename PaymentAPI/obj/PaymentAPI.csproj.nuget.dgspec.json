@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#\\PaymentAPI\\PaymentAPI.csproj": {}
+    "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj": {}
   },
   "projects": {
-    "E:\\C#\\PaymentAPI\\PaymentAPI.csproj": {
+    "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#\\PaymentAPI\\PaymentAPI.csproj",
+        "projectUniqueName": "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj",
         "projectName": "PaymentAPI",
-        "projectPath": "E:\\C#\\PaymentAPI\\PaymentAPI.csproj",
+        "projectPath": "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "E:\\C#\\PaymentAPI\\obj\\",
+        "outputPath": "E:\\C#\\sesi-14\\PaymentAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
