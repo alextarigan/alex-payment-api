@@ -115,6 +115,17 @@ namespace PaymentAPI
                 app.UseDeveloperExceptionPage();
                 
             }
+            app.UseHttpsRedirection();
+
+            var options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("mydefault.html");
+            app.UseDefaultFiles(options);
+
+            app.UseStaticFiles();
+
+
+            app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PaymentAPI v1"));
             app.UseAuthentication();
