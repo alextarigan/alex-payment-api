@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PaymentAPI.Data;
 
-namespace TodoApp.Migrations
+namespace PaymentAPI.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
     partial class ApiDbContextModelSnapshot : ModelSnapshot
@@ -225,11 +225,14 @@ namespace TodoApp.Migrations
                     b.Property<string>("cardOwnerName")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("expirationDate")
-                        .HasColumnType("datetime");
+                    b.Property<int>("month")
+                        .HasColumnType("int");
 
                     b.Property<string>("securityCode")
                         .HasColumnType("longtext");
+
+                    b.Property<int>("year")
+                        .HasColumnType("int");
 
                     b.HasKey("paymentDetailId");
 

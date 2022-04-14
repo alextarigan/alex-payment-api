@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj": {}
+    "E:\\OCBC\\sesi-14\\PaymentAPI\\PaymentAPI.csproj": {}
   },
   "projects": {
-    "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj": {
+    "E:\\OCBC\\sesi-14\\PaymentAPI\\PaymentAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj",
+        "projectUniqueName": "E:\\OCBC\\sesi-14\\PaymentAPI\\PaymentAPI.csproj",
         "projectName": "PaymentAPI",
-        "projectPath": "E:\\C#\\sesi-14\\PaymentAPI\\PaymentAPI.csproj",
+        "projectPath": "E:\\OCBC\\sesi-14\\PaymentAPI\\PaymentAPI.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "E:\\C#\\sesi-14\\PaymentAPI\\obj\\",
+        "outputPath": "E:\\OCBC\\sesi-14\\PaymentAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -67,6 +67,10 @@
               "target": "Package",
               "version": "[5.0.15, )"
             },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -114,6 +118,10 @@
             "System.Security.Claims": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[6.0.3, )"
             }
           },
           "imports": [

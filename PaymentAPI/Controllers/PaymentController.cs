@@ -75,7 +75,9 @@ namespace PaymentAPI.Controllers
 
             existItem.cardOwnerName = payment.cardOwnerName;
             existItem.cardNumber = payment.cardNumber;
-            existItem.expirationDate = payment.expirationDate;
+            existItem.month = payment.month;
+            existItem.year = payment.year;
+            // existItem.expirationDate = payment.expirationDate;
             existItem.securityCode = payment.securityCode;
 
             await _context.SaveChangesAsync();

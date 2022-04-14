@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PaymentAPI.Data;
 
-namespace TodoApp.Migrations
+namespace PaymentAPI.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20220330131639_initial")]
-    partial class initial
+    [Migration("20220412023127_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -227,11 +227,14 @@ namespace TodoApp.Migrations
                     b.Property<string>("cardOwnerName")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("expirationDate")
-                        .HasColumnType("datetime");
+                    b.Property<int>("month")
+                        .HasColumnType("int");
 
                     b.Property<string>("securityCode")
                         .HasColumnType("longtext");
+
+                    b.Property<int>("year")
+                        .HasColumnType("int");
 
                     b.HasKey("paymentDetailId");
 

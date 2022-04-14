@@ -28,6 +28,9 @@ using Microsoft.EntityFrameworkCore;
 using PaymentAPI.Models;
 using PaymentAPI.Data;
 
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+
 
 
 
@@ -45,6 +48,15 @@ namespace PaymentAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+            //  services.AddControllers().AddJsonOptions(x =>
+            // {
+            //     x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+
+                
+            //     x.JsonSerializerOptions.IgnoreNullValues = true;
+            // });
+            
             var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
 
             var tokenValidationParams = new TokenValidationParameters{
@@ -72,6 +84,7 @@ namespace PaymentAPI
                     Configuration.GetConnectionString("DefaultConnection"),new MySqlServerVersion(new Version())
                 ));
             services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PaymentAPI", Version = "v1" });
@@ -115,23 +128,26 @@ namespace PaymentAPI
                 app.UseDeveloperExceptionPage();
                 
             }
-            app.UseHttpsRedirection();
+           
+            //app.UseHttpsRedirection();
+           
 
-            var options = new DefaultFilesOptions();
-            options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("mydefault.html");
-            app.UseDefaultFiles(options);
+            // var options = new DefaultFilesOptions();
+            // options.DefaultFileNames.Clear();
+            // options.DefaultFileNames.Add("mydefault.html");
+            // app.UseDefaultFiles(options);
 
-            app.UseStaticFiles();
-
-
-            app.UseRouting();
+            // app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PaymentAPI v1"));
-            app.UseAuthentication();
-            app.UseHttpsRedirection();
-
             app.UseRouting();
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            // app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
